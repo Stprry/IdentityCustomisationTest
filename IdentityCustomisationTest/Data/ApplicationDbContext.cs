@@ -4,6 +4,7 @@ using System.Text;
 using IdentityCustomisationTest.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using IdentityCustomisationTest.Models;
 
 namespace IdentityCustomisationTest.Data
 {
@@ -13,5 +14,6 @@ namespace IdentityCustomisationTest.Data
             : base(options)
         {
         }
+        public DbSet<IdentityCustomisationTest.Models.Property> Property { get; set; }
     }
 }
