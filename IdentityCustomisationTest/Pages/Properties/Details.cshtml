@@ -46,7 +46,11 @@
             @Html.DisplayNameFor(model => model.Property.MainImage)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Property.MainImage)
+            @if (Model.Property.MainImagePath != null)
+            {
+           
+                    <img src="/uploads/@Model.Property.MainImagePath" />
+            }
         </dd>
     </dl>
 </div>
