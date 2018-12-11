@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IdentityCustomisationTest.Models
 {
-    public class Properties
+    public class Property
     {
         public int ID { get; set; }
         public string HouseNum { get; set; }
