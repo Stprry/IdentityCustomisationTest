@@ -43,6 +43,7 @@ namespace IdentityCustomisationTest.Pages.Properties
             using (var stream = new FileStream(path, FileMode.Create))
             {
                 await Property.MainImage.CopyToAsync(stream);
+                Property.MainImagePath = path;
             }
 
             _context.Property.Add(Property);
