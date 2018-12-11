@@ -18,7 +18,6 @@ namespace IdentityCustomisationTest.Models
         [MaxLength(10)]
         public string PostCode { get; set; }
 
-        [Required]
         [Display(Name = "Property 360 Image")]
         public string MainImagePath { get; set; }
         
