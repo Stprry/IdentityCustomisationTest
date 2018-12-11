@@ -48,8 +48,13 @@
         <dd>
             @if (Model.Property.MainImagePath != null)
             {
-           
-                    <img src="/uploads/@Model.Property.MainImagePath" />
+                <div id="panorama"></div>
+                <script>
+                    pannellum.viewer('panorama', {
+                        "type": "equirectangular",
+                        "panorama": "/uploads/@Model.Property.MainImagePath"
+                    });
+                </script>
             }
         </dd>
     </dl>

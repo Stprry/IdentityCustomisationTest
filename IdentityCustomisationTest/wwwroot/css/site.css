@@ -35,3 +35,9 @@ body {
         display: none;
     }
 }
+
+
+#panorama {
+    width: 500px;
+    height: 300px;
+}
