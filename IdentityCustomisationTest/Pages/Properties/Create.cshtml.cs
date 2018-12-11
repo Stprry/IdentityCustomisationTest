@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using IdentityCustomisationTest.Data;
 using IdentityCustomisationTest.Models;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace IdentityCustomisationTest.Pages.Properties
 {
@@ -32,6 +34,15 @@ namespace IdentityCustomisationTest.Pages.Properties
             if (!ModelState.IsValid)
             {
                 return Page();
+            }
+
+            var path = Path.Combine(
+            Directory.GetCurrentDirectory(), "wwwroot/uploads",
+            Property.MainImage.FileName);
+            var memory = new MemoryStream();
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                await Property.MainImage.CopyToAsync(stream);
             }
 
             _context.Property.Add(Property);

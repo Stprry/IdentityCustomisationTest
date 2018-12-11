@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,7 +17,13 @@ namespace IdentityCustomisationTest.Models
         public string Address3 { get; set; }
         [MaxLength(10)]
         public string PostCode { get; set; }
-        public string MainImage { get; set; }
+
+        [Required]
+        [Display(Name = "Property 360 Image")]
+        public string MainImagePath { get; set; }
+        
+        [NotMappedAttribute]
+        public IFormFile MainImage { get; set; }
 
         public ICollection<Room> Rooms { get; set; }
 
